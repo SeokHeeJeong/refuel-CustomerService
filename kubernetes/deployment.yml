@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: customerService
+  name: customerservice
   labels:
-    app: customerService
+    app: customerservice
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: customerService
+      app: customerservice
   template:
     metadata:
       labels:
-        app: customerService
+        app: customerservice
       annotations:
         sidecar.istio.io/inject: "true"
     spec:
       containers:
-        - name: customerService
+        - name: customerservice
           image: username/CustomerService:latest
           ports:
             - containerPort: 8080
